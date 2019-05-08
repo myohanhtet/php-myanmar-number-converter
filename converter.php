@@ -1,8 +1,15 @@
 <?php 
 
-class Myanum
+class MmConverter
 {
-    static function Mm_en($digits,$locale = 'my_MM')
+    /**
+     * Convert Myanmar <=> English string.
+     *
+     * @param  string $digits
+     * @return string
+     */
+    
+    static function Number($digits, $locale = 'my_MM')
     {
 
         $en_number = range(0, 9);
@@ -10,7 +17,7 @@ class Myanum
 
         if($locale === 'my_MM'){
             $number = str_ireplace($en_number, $mm_number, $digits);
-        } else {
+        } elseif($locale === 'en') {
             $number = str_ireplace($mm_number,$en_number, $digits);
         }
 
@@ -18,4 +25,4 @@ class Myanum
     }
 }
 
-var_dump(Myanum::Mm_en('၁','en')); //1
+var_dump(MmConverter::Number('1234','my_MM')); //1234

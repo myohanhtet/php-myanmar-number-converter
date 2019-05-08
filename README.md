@@ -3,6 +3,6 @@
 string myanmar <=> english
 
 ```php
-   var_dump(Myanum::Mm_en('၁','en'));  // 1
-   var_dump(Myanum::Mn_en('1','my_MM')); // ၁
+   var_dump(MmConverter::Number('၁','en'));  // 1
+   var_dump(Myanum::Number('1','my_MM')); // ၁
 ```
